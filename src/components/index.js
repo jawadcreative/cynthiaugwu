@@ -3,7 +3,7 @@ import Work from "./Work";
 import Marquee from "./Marquee";
 import About from "./About";
 import Navbar from "./layout/Navbar";
-import Footer from "./layout/footer";
+import Footer from "./layout/Footer";
 import GridWork from "./GridWork";
 
 
