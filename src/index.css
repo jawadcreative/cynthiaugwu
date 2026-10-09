@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: Medium;
+  src: url("/fonts/GeneralSans-Medium.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Regular;
+  src: url("/fonts/GeneralSans-Regular.otf") format("opentype");
+}
+
+:root {
+  --background-color: #dddddd;
+  --foreground-color: #1f1f1f;
+  --border-color: #4e4e4e;
+  --font-medium: Medium;
+  --font-regular: Regular;
+}
+
+@theme inline {
+  --color-background: var(--background-color);
+  --color-foreground: var(--foreground-color);
+  --font-medium: var(--font-medium);
+  --font-regular: var(--font-regular);
+  --color-border: var(--border-color);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #1f1f1f;
+    --foreground-color: #dddddd;
+    --border-color: #838383;
+  }
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--foreground-color);
+  border: var(--border-color);
+  font-family: var(--font-medium);
+}
+
+.link {
+  position: relative;
+  overflow: hidden;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--foreground-color);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.custom-cursor, .imageBox{
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
+}
+
